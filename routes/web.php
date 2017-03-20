@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'PresentationController@index')->middleware('auth');
 Route::get('files/{filename}', 'FileController@show')->where('filename', '^[^/]+$')->middleware('auth');
+//
