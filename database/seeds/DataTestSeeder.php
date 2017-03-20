@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class DataTestSeeder extends Seeder
 {
@@ -38,6 +39,7 @@ class DataTestSeeder extends Seeder
          *
          */
 
+        /*
         DB::table('slides')->insert([
         		'title_slide' => 'Slide 01',
         		'description' => 'Slide 01 de la premiere presentation',
@@ -69,13 +71,15 @@ class DataTestSeeder extends Seeder
         		'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         	]);
 
-
+		*/
+	
         /*
          *
          *  Files
          *
          */
 
+        /*
         DB::table('files')->insert([
         		'title_file' => 'Img01',
         		'path_file' => 'slides/pictures/Img01.jpg',
@@ -86,5 +90,6 @@ class DataTestSeeder extends Seeder
         		'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         		'slide_id' => 1,
         	]);
+        */
     }
 }

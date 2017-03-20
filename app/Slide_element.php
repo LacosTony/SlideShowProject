@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slide_element extends Model
 {
-    public function slides(){
-		return $this->morphMany('App\Slide','composant');
+	public function slide(){
+		return $this->belongsTo('App\Slide');
 	}
 	protected $fillable = ['title','subtitle','text'];
 	public $timestamps = true;

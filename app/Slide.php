@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slide extends Model
 {
-    public function presentations()
+    public function presentation()
     {
         return $this->belongsTo('App\Presentation');
+    }
+    public function slide_element(){
+    	return $this->hasOne('App\Slide_element');
     }
 	public function composant(){
 		return $this->morphTo();
