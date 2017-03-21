@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -17,5 +18,11 @@ class PresentationController extends Controller
     {
         $presentations = Presentation::all();
         return view('presentation',['presentations'=>$presentations]);
+    }
+
+    public function show($id)
+    {
+    	$presentation = Presentation::with('slides')->findOrFail($id);
+    	$title_pres = $presentation->title_pres;
     }
 }
