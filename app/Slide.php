@@ -18,4 +18,6 @@ class Slide extends Model
 	}
     protected $fillable=['title_slide','description','presentation_id'];
     public $timestamps = true;
+
+    
 }
