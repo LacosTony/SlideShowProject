@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -20,10 +19,11 @@ class PresentationController extends Controller
         return view('presentation',['presentations'=>$presentations]);
     }
 
+    /*
     public function show($presentation)
     {
     	//$presentation = Presentation::with('slides')->findOrFail($id);
     	$presentation = DB::table('presentations')->where('title_pres',str_replace('-',' ',$presentation));
     	$title_pres = $presentation->title_pres;
-    }
+    }*/
 }

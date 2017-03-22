@@ -3,6 +3,8 @@
 namespace App;
 
 use DB;
+use File;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Presentation extends Model
@@ -13,6 +15,18 @@ class Presentation extends Model
     }
     protected $fillable = ['title_pres','description'];
     public $timestamps = true;
+
+    //
+    //Fonction permettant de créer le dossier lié à la présentation
+    //
+
+    public static function create(Presentation $presentation){
+        if(!is_dir(storage_path('app/files/'.$presentation->title_pres))){
+            $storage = storage_path('app/files/'.$presentation->title_pres);
+            $success = File::makeDirectory($storage);
+        }else{}
+        $presentation->save();
+    }
 
     //
     //Liste des informations de toutes les slides d'une présentation
