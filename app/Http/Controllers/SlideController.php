@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Slide;
 
 class SlideController extends Controller
 {
-    public function show($presentation,$id)
+    public function show($title_pres,$number)
     {
-    	//$presentation = DB::table('presentations')->where('title_pres',str_replace('-',' ',$presentation))->get();
-
+    	$slide = Slide::affichageSlide($title_pres,$number);
+    	return view('layouts.testView',['slide'=>$slide]);
     }
 }

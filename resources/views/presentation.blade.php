@@ -25,7 +25,7 @@
     <div class="row">
         @foreach($presentations as $presentation)
         <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Mini image de presentation">
+            <a href="/{{str_replace(' ','-',$presentation->title_pres)}}/0"><img data-src="holder.js/100px280/thumb" alt="Mini image de presentation"></a>
             <p class="card-title">{{$presentation->title_pres}}</p>
             <p class="card-text">{{$presentation->description}}</p>
         </div> 

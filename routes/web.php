@@ -19,4 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'PresentationController@index')->middleware('auth');
 Route::get('files/{filename}', 'FileController@show')->where('filename', '^[^/]+$')->middleware('auth');
-//
+
+Route::get('{title_pres}/{number}','SlideController@show');
+
+//->where(['title_pres'=>'[A-Za-z0-9-]+', 'number'=>'[0-9]+']);
+
+
+/*Route::get('/pres/{title_pres}/{number}',function($title_pres,$number){
+	$listSlides = App\Presentation::listSlideByPres($title_pres);
+	return view('layouts.testView',['listSlides'=>$listSlides,'number'=>$number]);
+});*/

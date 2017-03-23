@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     public function slides(){
-		return $this->morphMany('App\Slide','composant');
+		return $this->belongsTo('App\Slide');
 	}
 	protected $fillable = ['title_file','path_file','url','width','height','mimeType'];
 	public $timestamps=true;
