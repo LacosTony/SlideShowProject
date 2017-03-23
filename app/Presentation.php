@@ -50,7 +50,7 @@ class Presentation extends Model
     	$value = false;
 
     	foreach ($presentations as $pres_val) {
-    		if($pres_val->title_pres == $title_pres){
+    		if($pres_val->title_pres == str_replace('-',' ',$title_pres)){
     			$value=true;
     		}
     	}
