@@ -14,9 +14,9 @@ class FileController extends Controller
         $this->middleware('auth');
     }
 
-    public function show($filename){
-    	$storagePath = storage_path('app/files/pictures/'.$filename);
-    	$exists = Storage::disk('local')->exists('files/pictures/'.$filename);
+    public function show($title_pres,$filename){
+    	$storagePath = storage_path('app/files/'.str_replace('-',' ',$title_pres).'/'.$filename);
+    	$exists = Storage::disk('local')->exists('files/'.str_replace('-',' ',$title_pres).'/'.$filename);
     	
     	if($exists){
     		return response()->download($storagePath,null,[],null);
