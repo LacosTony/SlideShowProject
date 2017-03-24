@@ -7,11 +7,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Slide;
 use App\Presentation;
+use Illuminate\Support\Facades\Input;
 
 class SlideController extends Controller
 {
-    public function show($title_pres,$number)
+    public function show($title_pres)
     {
+        $number=Input::get('slide');
     	$presExist = Presentation::verifExist($title_pres);
 
     	if($presExist){
