@@ -56,4 +56,16 @@ class Presentation extends Model
     	}
     	return $value;
     }
+
+    //
+    //Nombre de slide par présentation
+    //
+    public static function countSlides($title_pres){
+        $countSlides = DB::table('slides')
+                    ->join('presentations','presentations.id','=','slides.presentation_id')
+                    ->select('slides.*')
+                    ->where('presentations.title_pres','=',str_replace('-',' ',$title_pres))
+                    ->count();
+        return $countSlides;
+    }
 }

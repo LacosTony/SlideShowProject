@@ -22,13 +22,20 @@
 			@endforeach
 
 		</div>
-		
-		@if($number==0)
+
+		<!--Condition de navigation pour ne pas être en dehors des slides-->
+		@if($number<=0)
 			<span class="nav arrow-left" target-frame="0"></span>
     		<span class="nav arrow-right" target-frame="{{$number+1}}"></span>
-		@else
+		@elseif($number<$nbMaxSlide-1)
 			<span class="nav arrow-left" target-frame="{{$number-1}}"></span>
    			<span class="nav arrow-right" target-frame="{{$number+1}}"></span>
+   		@elseif($number==$nbMaxSlide-1)
+   			<span class="nav arrow-left" target-frame="{{$number-1}}"></span>
+   			<span class="nav arrow-right" target-frame="{{$number}}"></span>
+   		@else
+   			<span class="nav arrow-left" target-frame="{{$nbMaxSlide-2}}"></span>
+   			<span class="nav arrow-right" target-frame="{{$nbMaxSlide-1}}"></span>
 		@endif
 
 		<!-- Scripts -->

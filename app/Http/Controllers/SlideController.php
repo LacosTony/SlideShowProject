@@ -18,18 +18,9 @@ class SlideController extends Controller
 
     	if($presExist){
     		$slide = Slide::affichageSlide($title_pres,$number);
-            $i=0;
-            /*$test;
-            foreach($slide['files'] as $file){
-                $test[$i] = response()->download(storage_path('app/'.$file->path_file),null,[],null);
-            }*/
-    		
-            foreach($slide['files'] as $file){
-                $storage_path[$i]=storage_path('app/'.$file->path_file);
-                $i++;
-            }
+            $nbMaxSlide = Presentation::countSlides($title_pres);
 
-            return view('layouts.testView',['slide'=>$slide,'storage_path'=>$storage_path,'number'=>$number]);//,'test'=>$test]);
+            return view('layouts.testView',['slide'=>$slide,'number'=>$number,'nbMaxSlide'=>$nbMaxSlide]);
     	}else{
     		
     		//ATTENTION A CHANGER
