@@ -43,7 +43,7 @@ $(document).ready(function(){
 		}
 	});
 
-	//Bouton 'Annuler'
+	//Bouton 'Annuler' - va recacher le thumbnail et enlever l'image de la selection
 
 	$('#image_preview').find('button[type="button"]').on('click',function(e){
 		e.preventDefault();

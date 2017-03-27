@@ -25,7 +25,7 @@ class SlideController extends Controller
     		
     		//ATTENTION A CHANGER
     		
-    		return view('welcome');
+    		return redirect('/home');
     	}
     	
     }
