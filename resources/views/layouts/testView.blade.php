@@ -13,12 +13,13 @@
 		
 		<div class="content-container">	
 
-			<!--<p>{{$slide['elements']}}</p>
-			<p>{{var_dump($slide['files'])}}</p>
-			<p>{{$slide['nbFiles']}}</p>-->
+			<!--Affichage de la liste des images
+
+				ATTENTION IL FAUDRA ENCORE CODER LA CONDITION EN FONCTION DU MIMETYPE
+			-->
 			
 			@foreach($slide['files'] as $file)
-			<img src='{{$file->url}}' width="{{$file->width}}" height="{{$file->height}}">
+			<img src='{{$file->url}}' class="{{$title_pres}} {{$file->title_file}}" width="{{$file->width}}" height="{{$file->height}}">
 			@endforeach
 
 		</div>

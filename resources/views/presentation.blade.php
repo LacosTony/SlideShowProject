@@ -1,4 +1,8 @@
-@extends('layouts.presentationLayout')
+@extends('layouts.navBar')
+
+@section('title')
+    <title>Liste des présentations</title>
+@endsection
 
 @section('style')
 <style>

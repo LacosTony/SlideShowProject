@@ -19,6 +19,11 @@ class PresentationController extends Controller
         return view('presentation',['presentations'=>$presentations]);
     }
 
+
+    public function createPres(){
+        return view('createPres');
+    }
+
     /*
     public function show($presentation)
     {

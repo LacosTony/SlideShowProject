@@ -2,11 +2,11 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>Liste des présentations</title>
+		@yield('title')
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 		@yield('style')
-
+		@yield('script')
 		<!-- Scripts -->
 	    <script>
 	        window.Laravel = {!! json_encode([
@@ -65,5 +65,6 @@
 		  @yield('content')
 		<!-- Scripts -->
     	<script src="{{ asset('js/app.js') }}"></script>
+    	<!--//@yield('script')-->
 	</body>
 </html>

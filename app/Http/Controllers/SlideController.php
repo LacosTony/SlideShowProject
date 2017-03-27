@@ -20,7 +20,7 @@ class SlideController extends Controller
     		$slide = Slide::affichageSlide($title_pres,$number);
             $nbMaxSlide = Presentation::countSlides($title_pres);
 
-            return view('layouts.testView',['slide'=>$slide,'number'=>$number,'nbMaxSlide'=>$nbMaxSlide]);
+            return view('layouts.testView',['slide'=>$slide,'number'=>$number,'nbMaxSlide'=>$nbMaxSlide,'title_pres'=>$title_pres]);
     	}else{
     		
     		//ATTENTION A CHANGER

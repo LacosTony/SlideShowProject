@@ -21,8 +21,9 @@ Route::get('/home', 'PresentationController@index')->middleware('auth');
 Route::get('files/{title_pres}/{filename}', 'FileController@show')->where('filename', '^[^/]+$')->middleware('auth');
 
 //Route::get('{title_pres}/{number}','SlideController@show');
-
+Route::get('/newPres','PresentationController@createPres')->middleware('auth');
 Route::get('{title_pres}/','SlideController@show');
+
 
 //->where(['title_pres'=>'[A-Za-z0-9-]+', 'number'=>'[0-9]+']);
 
