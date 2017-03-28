@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	//Envoi du formulaire
-
+/*
 	$('#form_pres').on('submit',function(e){
 		e.preventDefault();
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		});
 	});
 
-	
+*/	
 	//Prévisualisation de la miniature
 
 	$('#form_pres').find("input[name='miniature']").on('change', function(e){

@@ -20,7 +20,7 @@ class Presentation extends Model
     //Fonction permettant de créer le dossier lié à la présentation
     //
 
-    public static function create(Presentation $presentation){
+    public static function createDir(Presentation $presentation){
         if(!is_dir(storage_path('app/files/'.$presentation->title_pres))){
             $storage = storage_path('app/files/'.$presentation->title_pres);
             $success = File::makeDirectory($storage);

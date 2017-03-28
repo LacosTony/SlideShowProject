@@ -15,7 +15,9 @@
 
 	<div class="row">
 		<div class="col-lg-6">
-			<form id="form_pres" class="form-horizontal well" method="post" action="/home" enctype="multipart/form-data">
+			<form id="form_pres" class="form-horizontal well" method="post" action="{{ url('addPres') }}" enctype="multipart/form-data">
+				<!-- to protect your application from CSRF attacks-->
+				{{ csrf_field() }}
 				<div class="form-group">
 					<label for="titre" class="col-lg-2 control-label">Titre</label>
 					<div class="col-lg-10">
@@ -31,7 +33,7 @@
 				<div class="form-group">
 					<label for="miniature" class="col-lg-2 control-label">Miniature</label>
 					<div class="col-lg-10">
-						<input type="file" class="form-control" name="miniature" accept="image/*">
+						<input type="file" name="miniature" accept="image/*">
 					</div>
 				</div>
 				<div class="form-group" style="margin-bottom: 0;">
