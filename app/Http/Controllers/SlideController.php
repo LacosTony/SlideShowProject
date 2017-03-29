@@ -29,4 +29,9 @@ class SlideController extends Controller
     	}
     	
     }
+
+    public function createSlide($title_pres){
+        $num_slide=1;
+        return view('createSlide',['title_pres'=>$title_pres,'num_slide'=>$num_slide]);
+    }
 }

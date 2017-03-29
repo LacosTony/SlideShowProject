@@ -26,7 +26,7 @@ class PresentationController extends Controller
     }
 
     public function savePres(Request $request){
-        
+
         $presentation = new Presentation();
         $presentation->title_pres = $request->get('title_pres');
         $presentation->description = $request->get('description');
@@ -50,21 +50,17 @@ class PresentationController extends Controller
             
             $filename = $name;
 
+            // Attention, ici nous n'avons pas une miniature mais l'image elle-même et nous allons définir la taille au niveau du "/home"
             Input::file('miniature')->move($path_min,$filename);
 
             return redirect('/home');
 
         }else{
+
+            //IL faudra passer un parametre lors du redirect de façon à afficher une box comme quoi la présentation existe déjà
             return redirect('/newPres');
         }
         
     }
 
-    /*
-    public function show($presentation)
-    {
-    	//$presentation = Presentation::with('slides')->findOrFail($id);
-    	$presentation = DB::table('presentations')->where('title_pres',str_replace('-',' ',$presentation));
-    	$title_pres = $presentation->title_pres;
-    }*/
 }

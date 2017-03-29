@@ -24,6 +24,8 @@ Route::get('/newPres','PresentationController@createPres')->middleware('auth');
 
 Route::post('/addPres',array('as' => 'addPres','uses' => 'PresentationController@savePres'));
 
+Route::get('{title_pres}/newSlide','SlideController@createSlide');
+
 Route::get('{title_pres}/','SlideController@show');
 
 
