@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Slide;
 use App\Presentation;
+use App\Slide_elementController;
 use Illuminate\Support\Facades\Input;
 
 class SlideController extends Controller
@@ -31,7 +32,21 @@ class SlideController extends Controller
     }
 
     public function createSlide($title_pres){
-        $num_slide=1;
+        $num_slide=Presentation::countSlides($title_pres)+1;
         return view('createSlide',['title_pres'=>$title_pres,'num_slide'=>$num_slide]);
+    }
+
+    public function getListByPres($title_pres){
+        $slides=Presentation::listSlideByPres($title_pres);
+        return view('listSlides',['slides'=>$slides,'title_pres'=>$title_pres]);
+    }
+
+    public function saveSlide(Request $request){
+        $slide = new Slide();
+        $slide->title_slide = $request->get('title_slide');
+        $slide->description = $request->get('description');
+        $slide->presentation_id = Presentation::getPresIdByTitle($request->get('title_pres'));
+
+        //TODO : save() + boucle for pour enregistrer les files
     }
 }

@@ -19,7 +19,13 @@
 			-->
 			
 			@foreach($slide['files'] as $file)
-			<img src='{{$file->url}}' class="{{$title_pres}} {{$file->title_file}}" width="{{$file->width}}" height="{{$file->height}}">
+				@if($file->mimeType == 'image/jpeg')
+					<img src='{{$file->url}}' class="{{$title_pres}} {{$file->title_file}}" width="{{$file->width}}" height="{{$file->height}}">
+				@elseif($file->mimeType =='video/webm')
+					<video class="presa-vid box-shadow" autoplay loop>
+					<source src="{{$file->url}}" type="{{$file->mimeType}}">
+					</video>
+				@endif
 			@endforeach
 
 		</div>

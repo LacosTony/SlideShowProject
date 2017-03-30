@@ -9,14 +9,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1>Projet : {{$title_pres}}</h1>
-				<h2>Nouvelle slide - slide {{$num_slide}}</h2>
+				<h2>Slide {{$num_slide}}</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
 				<form id="form_slide" class="form-horizontal well" method="post" action="" enctype="multipart/form-data">
 					<!-- Information pour la table Slide -->
-					<fieldset>
+					
 					<div>
 						<div class="form-group">
 							<label for="title_slide" class="col-lg-2 control-label">titre</label>
@@ -31,11 +31,11 @@
 							</div>
 						</div>
 					</div>
-					</fieldset>
+					
 					<!-- La récupération de l'id de la présentation se fera déjà lors de la sélection de la présentation à modifier-->
 					
 					<!-- Information pour la table Slide_element OneToOne -->
-					<fieldset>
+					
 					<div>
 						<div class="form-group">
 							<label for="element_title" class="col-lg-2 control-label">titre (élément)</label>
@@ -56,7 +56,7 @@
 							</div>
 						</div>
 					</div>
-					</fieldset>
+					
 					<!-- La récupération de l'id de la slide se fera du fait qu'on rajoute une nouvelle slide (autre idée par exemple en cas de mauvais emplacement possibilité de drag and drop l'image afin de la placer à une autre position mais il faut rajouter un champ à la table slide)-->
 					
 					<!-- Information pour la table File -->
@@ -64,13 +64,13 @@
 									 mais si il s'agit d'une vidéo il n'y en aura qu'une seule
 						
 						Une boucle for sera certainement nécessaire --> 
-					<fieldset>
+					
 					<div>
 						<div class="form-group input_fields_wrap">
 <!-- A TESTER -->			<!-- TODO -->
 							<label for="file_slide_1" class="col-lg-2 control-label">Image 1 :</label>
 							<div class="col-lg-10">
-								<input type="file" name="file_slide_1" accept="image/*">
+								<input type="file" name="file_slide_1" accept="image/*|video/*">
 							</div>
 						</div>
 						<div class="form-group">
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 					</div>
-					</fieldset>
+					
 				</form>
 			</div>
 		</div>

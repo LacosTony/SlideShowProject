@@ -26,6 +26,8 @@ Route::post('/addPres',array('as' => 'addPres','uses' => 'PresentationController
 
 Route::get('{title_pres}/newSlide','SlideController@createSlide');
 
+Route::get('{title_pres}/listSlides','SlideController@getListByPres');
+
 Route::get('{title_pres}/','SlideController@show');
 
 

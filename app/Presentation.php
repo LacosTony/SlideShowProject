@@ -68,4 +68,18 @@ class Presentation extends Model
                     ->count();
         return $countSlides;
     }
+
+    public static function getPresIdByTitle($title_pres){
+        $presentation_id = DB::table('presentations')
+                            ->select('presentations.id')
+                            ->where('presentations.title_pres','=',str_replace('-',' ',$title_pres))
+                            ->get();
+        return $presentation_id;
+    }
+
+    public static function hasMiniature($title_pres){
+        $title_pres=str_replace('-',' ',$title_pres);
+        $value=false;
+        
+    }
 }
